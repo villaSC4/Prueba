@@ -44,8 +44,7 @@ export default function Diferenciadores() {
   return (
     <section id="nosotros" className="py-20 bg-gradient-to-b from-[#F8FAFC] to-[#FFFFFF] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
+
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary font-bold text-xs uppercase tracking-[0.2em]">Diferenciadores</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-primary mt-2">
@@ -57,8 +56,7 @@ export default function Diferenciadores() {
           </p>
         </div>
 
-        {/* Grid Cards */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -73,21 +71,20 @@ export default function Diferenciadores() {
               className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-100/50 hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-300 flex flex-col justify-between group card-hover-move"
             >
               <div>
-                {/* Icon wrapper with custom gradient */}
+
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${diff.color} text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6`}>
                   {diff.icon}
                 </div>
-                
+
                 <h3 className="text-xl font-heading font-extrabold text-primary mb-3">
                   {diff.title}
                 </h3>
-                
+
                 <p className="text-dark/70 font-light leading-relaxed text-sm sm:text-base">
                   {diff.description}
                 </p>
               </div>
 
-              {/* Decorative accent element in card bottom */}
               <div className="w-8 h-1 bg-slate-100 group-hover:bg-secondary transition-colors duration-300 rounded-full mt-6" />
             </motion.div>
           ))}

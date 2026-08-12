@@ -18,7 +18,6 @@ export default function Contacto() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Simular el envío del formulario
     setTimeout(() => {
       setIsSubmitted(true)
     }, 600)
@@ -32,12 +31,12 @@ export default function Contacto() {
   return (
     <section id="contacto" className="py-20 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <motion.div 
+
+
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
@@ -52,19 +51,19 @@ export default function Contacto() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-          
-          {/* Info Column (Left) */}
-          <motion.div 
+
+
+          <motion.div
             initial={{ opacity: 0, x: -45 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.7 }}
             className="lg:col-span-5 flex flex-col justify-between space-y-8"
           >
             <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-100/40 space-y-6 text-left card-hover-move">
               <h3 className="text-xl font-heading font-extrabold text-primary mb-4">Información de Contacto</h3>
-              
-              {/* Dirección */}
+
+
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-xl bg-primary/5 text-primary shrink-0">
                   <MapPin className="h-5 w-5" />
@@ -77,7 +76,7 @@ export default function Contacto() {
                 </div>
               </div>
 
-              {/* Teléfono */}
+
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-xl bg-secondary/5 text-secondary shrink-0">
                   <Phone className="h-5 w-5" />
@@ -90,7 +89,7 @@ export default function Contacto() {
                 </div>
               </div>
 
-              {/* Correo */}
+
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-xl bg-emerald-500/5 text-emerald-500 shrink-0">
                   <Mail className="h-5 w-5" />
@@ -103,7 +102,7 @@ export default function Contacto() {
                 </div>
               </div>
 
-              {/* Horarios */}
+
               <div className="flex items-start gap-4 border-t border-slate-100 pt-5">
                 <div className="p-3 rounded-xl bg-orange-500/5 text-orange-500 shrink-0">
                   <Clock className="h-5 w-5" />
@@ -112,7 +111,7 @@ export default function Contacto() {
                   <h4 className="font-bold text-primary text-sm sm:text-base mb-2">Horarios de Atención:</h4>
                   <div className="grid grid-cols-2 gap-y-2 text-xs sm:text-sm">
                     <span className="text-dark/80 font-medium">Lun - Mié - Vie:</span>
-                    <span className="text-dark/70 font-light">9:00 am - 1:00 pm<br/>3:00 pm - 7:30 pm</span>
+                    <span className="text-dark/70 font-light">9:00 am - 1:00 pm<br />3:00 pm - 7:30 pm</span>
                     <span className="text-dark/80 font-medium">Mar - Jue:</span>
                     <span className="text-dark/70 font-light">2:00 pm - 7:30 pm</span>
                     <span className="text-dark/80 font-medium">Sábados:</span>
@@ -122,7 +121,7 @@ export default function Contacto() {
               </div>
             </div>
 
-            {/* Google Map Embed */}
+
             <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-200/50 bg-white h-[260px] relative">
               <iframe
                 title="Ubicación de Spine Clínica en Chacarilla Surco"
@@ -135,11 +134,11 @@ export default function Contacto() {
             </div>
           </motion.div>
 
-          {/* Form Column (Right) */}
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 45 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.7 }}
             className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-xl shadow-slate-100/40 relative flex flex-col justify-center min-h-[500px] card-hover-move"
           >
@@ -179,7 +178,7 @@ export default function Contacto() {
                   Completa tus datos y nos pondremos en contacto contigo en menos de 2 horas.
                 </p>
 
-                {/* Nombre */}
+
                 <div>
                   <label htmlFor="nombre" className="block text-xs font-bold text-primary uppercase tracking-wide mb-2">Nombre Completo</label>
                   <input
@@ -195,7 +194,7 @@ export default function Contacto() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {/* Teléfono */}
+
                   <div>
                     <label htmlFor="telefono" className="block text-xs font-bold text-primary uppercase tracking-wide mb-2">Teléfono de Contacto</label>
                     <input
@@ -210,7 +209,7 @@ export default function Contacto() {
                     />
                   </div>
 
-                  {/* Correo */}
+
                   <div>
                     <label htmlFor="email" className="block text-xs font-bold text-primary uppercase tracking-wide mb-2">Correo Electrónico</label>
                     <input
@@ -226,7 +225,7 @@ export default function Contacto() {
                   </div>
                 </div>
 
-                {/* Tratamiento de interés */}
+
                 <div>
                   <label htmlFor="tratamiento" className="block text-xs font-bold text-primary uppercase tracking-wide mb-2">Tratamiento de Interés</label>
                   <div className="relative">
@@ -250,7 +249,7 @@ export default function Contacto() {
                   </div>
                 </div>
 
-                {/* Mensaje */}
+
                 <div>
                   <label htmlFor="mensaje" className="block text-xs font-bold text-primary uppercase tracking-wide mb-2">Comentarios (Opcional)</label>
                   <textarea
@@ -264,7 +263,7 @@ export default function Contacto() {
                   />
                 </div>
 
-                {/* Submit button */}
+
                 <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-secondary/20 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer text-sm"

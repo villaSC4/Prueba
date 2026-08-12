@@ -71,12 +71,11 @@ export default function Tratamientos() {
 
   return (
     <section id="tratamientos" className="py-20 bg-white relative">
-      {/* Decorative shapes */}
+
       <div className="absolute top-10 right-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px] pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
+
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary font-bold text-xs uppercase tracking-[0.2em]">Especialidades</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-primary mt-2">
@@ -88,8 +87,7 @@ export default function Tratamientos() {
           </p>
         </div>
 
-        {/* Grid layout */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -104,20 +102,19 @@ export default function Tratamientos() {
               className="glass-panel rounded-3xl border border-slate-100 hover:border-secondary/20 shadow-xl shadow-slate-100/40 hover:shadow-2xl hover:shadow-secondary/5 flex flex-col justify-between overflow-hidden transition-all duration-300 group card-hover-move"
             >
               <div>
-                {/* Treatment Image header */}
+
                 <div className="h-48 w-full overflow-hidden relative">
                   <div className="absolute inset-0 bg-primary/10 mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity duration-300 z-10" />
-                  <img 
-                    src={treatment.image} 
-                    alt={treatment.title} 
-                    className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500" 
+                  <img
+                    src={treatment.image}
+                    alt={treatment.title}
+                    className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute bottom-4 left-4 z-20 w-10 h-10 rounded-xl bg-white text-primary flex items-center justify-center shadow-lg border border-slate-100">
                     {treatment.icon}
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6 text-left">
                   <h3 className="font-heading font-extrabold text-primary text-lg leading-snug mb-3 group-hover:text-secondary transition-colors duration-300">
                     {treatment.title}
@@ -128,7 +125,6 @@ export default function Tratamientos() {
                 </div>
               </div>
 
-              {/* Action Button */}
               <div className="p-6 pt-0 mt-auto">
                 <button
                   onClick={() => handleWhatsAppInquiry(treatment.whatsappMsg)}
@@ -142,10 +138,9 @@ export default function Tratamientos() {
           ))}
         </motion.div>
 
-        {/* Dedicated Video Demonstration Block */}
         <div className="mt-20 glass-panel rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-xl text-left">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
+
             <div className="lg:col-span-5 space-y-5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-bold">
                 <Play className="h-3 w-3 fill-secondary text-secondary" />
@@ -168,7 +163,7 @@ export default function Tratamientos() {
             </div>
 
             <div className="lg:col-span-7">
-              {/* Responsive 16:9 Video Container */}
+
               <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-black">
                 <iframe
                   width="100%"

@@ -57,8 +57,7 @@ export default function Testimonios() {
   return (
     <section id="opiniones" className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Rating Overview / Banner */}
+
         <div className="glass-panel p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-100/50 max-w-4xl mx-auto mb-16 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-2xl bg-yellow-500/10 text-yellow-500 flex items-center justify-center font-black text-2xl">
@@ -85,7 +84,6 @@ export default function Testimonios() {
           </div>
         </div>
 
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary font-bold text-xs uppercase tracking-[0.2em]">Prueba Social</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-primary mt-2">
@@ -94,13 +92,12 @@ export default function Testimonios() {
           <div className="w-12 h-1 bg-secondary mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Testimonials Grid */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: false, margin: '-100px' }}
         >
           {reviews.map((rev, i) => (
             <motion.div
@@ -113,20 +110,18 @@ export default function Testimonios() {
               </div>
 
               <div>
-                {/* Rating stars */}
+
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(rev.rating)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
 
-                {/* Comment */}
                 <p className="text-dark/80 font-light text-sm sm:text-base leading-relaxed italic mb-6">
                   "{rev.comment}"
                 </p>
               </div>
 
-              {/* Author Info */}
               <div className="flex items-center justify-between border-t border-slate-200/50 pt-5 mt-auto">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center">
@@ -149,7 +144,6 @@ export default function Testimonios() {
           ))}
         </motion.div>
 
-        {/* CTA to Google Reviews */}
         <div className="text-center mt-12">
           <a
             href="https://www.google.com/maps"

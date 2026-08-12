@@ -3,7 +3,7 @@ import Contacto from './Contacto'
 export default function ContactoPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
-      {/* Page Banner Hero */}
+
       <div className="relative bg-[#8C4A6E] text-white pt-36 pb-16 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
@@ -25,7 +25,6 @@ export default function ContactoPage() {
         </div>
       </div>
 
-      {/* Render the core Contact section */}
       <div className="-mt-10 relative z-20">
         <Contacto />
       </div>

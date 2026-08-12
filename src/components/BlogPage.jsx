@@ -10,15 +10,14 @@ export default function BlogPage() {
   const categories = ['Todos', 'Ergonomía', 'Tratamientos', 'Salud Infantil', 'Ejercicios']
 
   const filteredPosts = blogData.filter((post) => {
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          post.summary.toLowerCase().includes(searchQuery.toLowerCase())
+    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.summary.toLowerCase().includes(searchQuery.toLowerCase())
     const matchesCategory = selectedCategory === 'Todos' || post.category === selectedCategory
     return matchesSearch && matchesCategory
   })
 
   return (
     <section className="bg-slate-50 min-h-screen text-slate-800 font-sans pb-20">
-      {/* 1. Page Banner Hero */}
       <div className="relative bg-[#8C4A6E] text-white pt-36 pb-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
@@ -40,26 +39,24 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* 2. Controls (Search & Filter) */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 flex flex-col md:flex-row gap-6 justify-between items-center">
-        {/* Category Buttons */}
         <div className="flex flex-wrap gap-2 justify-center">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all cursor-pointer ${
-                selectedCategory === cat
-                  ? 'bg-[#8C4A6E] text-white shadow-md'
-                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
-              }`}
+              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all cursor-pointer ${selectedCategory === cat
+                ? 'bg-[#8C4A6E] text-white shadow-md'
+                : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+                }`}
             >
               {cat}
             </button>
           ))}
         </div>
 
-        {/* Search Bar */}
+
         <div className="relative w-full max-w-xs">
           <input
             type="text"
@@ -72,7 +69,7 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* 3. Blog List Grid */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {filteredPosts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -94,7 +91,6 @@ export default function BlogPage() {
                 </div>
 
                 <div className="p-6 flex flex-col flex-grow space-y-4">
-                  {/* Meta data */}
                   <div className="flex items-center gap-4 text-xs text-slate-400 font-medium">
                     <span className="flex items-center gap-1">
                       <Calendar className="h-3.5 w-3.5" />

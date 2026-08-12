@@ -14,13 +14,11 @@ import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 import WhatsAppCTA from './components/WhatsAppCTA'
 
-// Import route page components
 import TratamientosPage from './components/TratamientosPage'
 import ProblemasColumnaPage from './components/ProblemasColumnaPage'
 import BlogPage from './components/BlogPage'
 import ContactoPage from './components/ContactoPage'
 
-// Vista 1: Página Principal (Home)
 function Home() {
   return (
     <>
@@ -43,18 +41,16 @@ import ScrollToTop from './components/ScrollToTop'
 function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-dark overflow-x-hidden antialiased selection:bg-secondary/30 selection:text-primary">
-      {/* Scroll restoration */}
+
       <ScrollToTop />
 
-      {/* El Navbar y Footer se mantienen visibles en todas las páginas */}
       <Navbar />
 
       <main className="flex-grow">
         <Routes>
-          {/* Ruta principal del sitio */}
+
           <Route path="/" element={<Home />} />
 
-          {/* Páginas independientes */}
           <Route path="/nosotros" element={<Nosotros1 />} />
           <Route path="/tratamientos" element={<TratamientosPage />} />
           <Route path="/problemas-columna" element={<ProblemasColumnaPage />} />

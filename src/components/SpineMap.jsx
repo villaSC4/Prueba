@@ -2,9 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ShieldAlert, Activity, PhoneCall } from 'lucide-react'
 
-// Complete database of vertebrae from the original app.js
 const vertebraeData = {
-  // Cervicales
   'C1': {
     region: 'Región Cervical',
     badgeClass: 'bg-primary border-primary-dark',
@@ -18,7 +16,7 @@ const vertebraeData = {
       'Sensación de cansancio constante o fatiga crónica',
       'Falta de concentración e insomnio'
     ],
-    y: 58 // Vertical position on the spine image (px)
+    y: 58
   },
   'C2': {
     region: 'Región Cervical',
@@ -111,7 +109,6 @@ const vertebraeData = {
     y: 148
   },
 
-  // Torácicas
   'T1': {
     region: 'Región Torácica / Dorsal',
     badgeClass: 'bg-secondary border-secondary-dark',
@@ -281,7 +278,6 @@ const vertebraeData = {
     y: 333
   },
 
-  // Lumbares
   'L1': {
     region: 'Región Lumbar / Sacro',
     badgeClass: 'bg-accent border-accent-dark',
@@ -380,20 +376,19 @@ export default function SpineMap() {
   return (
     <section id="columna-interactiva" className="py-20 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header Title Area */}
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-4 mb-16"
         >
           <div className="flex justify-center">
-            <img 
-              src="https://spine.pe/wp-content/uploads/2023/05/icon-titulo.png" 
-              alt="Icono Columna" 
-              className="h-12 w-auto object-contain" 
+            <img
+              src="https://spine.pe/wp-content/uploads/2023/05/icon-titulo.png"
+              alt="Icono Columna"
+              className="h-12 w-auto object-contain"
             />
           </div>
           <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-primary">
@@ -405,34 +400,29 @@ export default function SpineMap() {
           <div className="w-16 h-1 bg-secondary mx-auto rounded-full mt-2" />
         </motion.div>
 
-        {/* Anatomy layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* COLUMN 1: Silhouette and Spine Visual (Visible on Desktop only) */}
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.7 }}
             className="hidden lg:flex lg:col-span-4 bg-white rounded-2xl shadow-md p-6 justify-center items-center relative min-h-[570px] border border-slate-200/50 card-hover-move"
           >
             <div className="relative w-[180px] h-[520px] select-none">
-              
-              {/* Silhouette */}
-              <img 
-                src="https://spine.pe/wp-content/uploads/2023/06/spine-cuerpo-bg.png" 
-                alt="Silueta humana" 
-                className="w-full h-full object-contain opacity-25" 
-              />
-              
-              {/* Spine Graphic */}
-              <img 
-                src="https://spine.pe/wp-content/uploads/2023/06/spine-bg-vertical.png" 
-                alt="Columna vertebral" 
-                className="absolute top-[50px] left-1/2 -translate-x-1/2 w-[60px] h-auto object-contain filter drop-shadow" 
+
+              <img
+                src="https://spine.pe/wp-content/uploads/2023/06/spine-cuerpo-bg.png"
+                alt="Silueta humana"
+                className="w-full h-full object-contain opacity-25"
               />
 
-              {/* Clickable hotspots directly overlayed on the spine graphic */}
+              <img
+                src="https://spine.pe/wp-content/uploads/2023/06/spine-bg-vertical.png"
+                alt="Columna vertebral"
+                className="absolute top-[50px] left-1/2 -translate-x-1/2 w-[60px] h-auto object-contain filter drop-shadow"
+              />
+
               {Object.entries(vertebraeData).map(([code, data]) => {
                 const isActive = code === selectedVert
                 return (
@@ -443,26 +433,22 @@ export default function SpineMap() {
                     style={{ top: `${data.y}px` }}
                     title={`Seleccionar vértebra ${code}`}
                   >
-                    {/* Ring Outer */}
-                    <div className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                      isActive 
-                        ? 'bg-secondary/40 scale-150 animate-ping' 
+
+                    <div className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive
+                        ? 'bg-secondary/40 scale-150 animate-ping'
                         : 'bg-primary/20 scale-100 group-hover:scale-125'
-                    }`} />
-                    
-                    {/* Inner Bullet */}
-                    <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      isActive 
-                        ? 'bg-secondary' 
+                      }`} />
+
+                    <div className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive
+                        ? 'bg-secondary'
                         : 'bg-primary/65 group-hover:bg-primary'
-                    }`} />
+                      }`} />
                   </button>
                 )
               })}
 
-              {/* Dynamic Connection Line Indicator pointing to the details box */}
               {activeData && (
-                <div 
+                <div
                   className="absolute left-[92px] right-[-100px] border-t-2 border-dashed border-secondary/50 transition-all duration-300 flex items-center justify-end z-20 pointer-events-none"
                   style={{ top: `${activeData.y + 7}px` }}
                 >
@@ -473,11 +459,10 @@ export default function SpineMap() {
             </div>
           </motion.div>
 
-          {/* COLUMN 2: Vertebrae Buttons Selection list */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="col-span-1 lg:col-span-4 bg-white rounded-2xl shadow-md p-6 border border-slate-200/50 card-hover-move"
           >
@@ -487,7 +472,7 @@ export default function SpineMap() {
             </h3>
 
             <div className="space-y-6">
-              {/* Cervical Group */}
+
               <div className="space-y-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-primary border-b border-slate-200 pb-1">
                   Región Cervical (C1 - C7)
@@ -499,11 +484,10 @@ export default function SpineMap() {
                       <button
                         key={code}
                         onClick={() => handleVertebraClick(code)}
-                        className={`w-9 h-9 rounded font-bold text-xs flex items-center justify-center transition-all duration-200 cursor-pointer ${
-                          isActive
+                        className={`w-9 h-9 rounded font-bold text-xs flex items-center justify-center transition-all duration-200 cursor-pointer ${isActive
                             ? 'bg-primary text-white shadow-md shadow-primary/20 scale-105'
                             : 'bg-slate-50 text-primary hover:bg-primary hover:text-white border border-slate-200/60'
-                        }`}
+                          }`}
                       >
                         {code}
                       </button>
@@ -512,7 +496,6 @@ export default function SpineMap() {
                 </div>
               </div>
 
-              {/* Torácica Group */}
               <div className="space-y-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-secondary border-b border-slate-200 pb-1">
                   Región Torácica / Dorsal (T1 - T12)
@@ -524,11 +507,10 @@ export default function SpineMap() {
                       <button
                         key={code}
                         onClick={() => handleVertebraClick(code)}
-                        className={`w-9 h-9 rounded font-bold text-xs flex items-center justify-center transition-all duration-200 cursor-pointer ${
-                          isActive
+                        className={`w-9 h-9 rounded font-bold text-xs flex items-center justify-center transition-all duration-200 cursor-pointer ${isActive
                             ? 'bg-secondary text-white shadow-md shadow-secondary/20 scale-105'
                             : 'bg-slate-50 text-secondary hover:bg-secondary hover:text-white border border-slate-200/60'
-                        }`}
+                          }`}
                       >
                         {code}
                       </button>
@@ -537,7 +519,6 @@ export default function SpineMap() {
                 </div>
               </div>
 
-              {/* Lumbar Group */}
               <div className="space-y-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-accent-dark border-b border-slate-200 pb-1">
                   Región Lumbar / Sacro (L1 - L5/S)
@@ -549,11 +530,10 @@ export default function SpineMap() {
                       <button
                         key={code}
                         onClick={() => handleVertebraClick(code)}
-                        className={`w-14 h-9 rounded font-bold text-xs flex items-center justify-center transition-all duration-200 cursor-pointer ${
-                          isActive
+                        className={`w-14 h-9 rounded font-bold text-xs flex items-center justify-center transition-all duration-200 cursor-pointer ${isActive
                             ? 'bg-accent text-white shadow-md shadow-accent/20 scale-105'
                             : 'bg-slate-50 text-accent-dark hover:bg-accent hover:text-white border border-slate-200/60'
-                        }`}
+                          }`}
                       >
                         {code === 'L5/S' ? 'L5 / S' : code}
                       </button>
@@ -564,7 +544,6 @@ export default function SpineMap() {
             </div>
           </motion.div>
 
-          {/* COLUMN 3: Vertebra Symptoms / Organs Details Panel */}
           <div className="col-span-1 lg:col-span-4 min-h-[460px]">
             <AnimatePresence mode="wait">
               <motion.div
@@ -575,7 +554,7 @@ export default function SpineMap() {
                 transition={{ duration: 0.3 }}
                 className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 flex flex-col h-full space-y-6 card-hover-move"
               >
-                {/* Badge and Region Title */}
+
                 <div className="flex items-center gap-4">
                   <div className={`w-14 h-14 rounded-full flex items-center justify-center text-white font-extrabold text-lg shadow-md border-2 ${activeData.badgeClass}`}>
                     {selectedVert}
@@ -592,7 +571,6 @@ export default function SpineMap() {
 
                 <div className="w-full h-px bg-slate-100" />
 
-                {/* Affected Organs Section */}
                 <div className="space-y-3">
                   <h5 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                     <Activity className="h-4 w-4 text-primary" />
@@ -600,16 +578,16 @@ export default function SpineMap() {
                   </h5>
                   <div className="flex flex-wrap gap-2">
                     {activeData.organs.map((organ, index) => (
-                      <div 
+                      <div
                         key={index}
                         className="bg-slate-50 text-slate-800 text-sm font-semibold py-2 px-4 rounded-full border border-slate-200/60 flex items-center gap-2"
                       >
                         <span>{organ.name}</span>
                         {organ.img && (
-                          <img 
-                            src={organ.img} 
-                            alt={organ.name} 
-                            className="h-5 w-auto object-contain" 
+                          <img
+                            src={organ.img}
+                            alt={organ.name}
+                            className="h-5 w-auto object-contain"
                             onError={(e) => { e.target.style.display = 'none' }}
                           />
                         )}
@@ -620,7 +598,6 @@ export default function SpineMap() {
 
                 <div className="w-full h-px bg-slate-100" />
 
-                {/* Symptoms / How it affects us */}
                 <div className="space-y-3 flex-grow">
                   <h5 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                     <ShieldAlert className="h-4 w-4 text-primary" />
@@ -636,7 +613,6 @@ export default function SpineMap() {
                   </ul>
                 </div>
 
-                {/* Section Action CTA */}
                 <button
                   onClick={() => handleWhatsAppQuery(selectedVert)}
                   className="w-full bg-primary hover:bg-[#733E5E] text-white py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 shadow-md shadow-primary/10 text-sm hover:scale-105 active:scale-95"

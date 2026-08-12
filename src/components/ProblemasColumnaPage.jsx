@@ -5,8 +5,8 @@ import SpineMap from './SpineMap'
 export default function ProblemasColumnaPage() {
   return (
     <div className="bg-slate-50 min-h-screen text-slate-800 font-sans">
-      
-      {/* 1. Page Banner Hero */}
+
+
       <div className="relative bg-[#8C4A6E] text-white pt-36 pb-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
@@ -28,7 +28,7 @@ export default function ProblemasColumnaPage() {
         </div>
       </div>
 
-      {/* 2. Grid of Conditions */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-[#8C4A6E]">
@@ -63,7 +63,6 @@ export default function ProblemasColumnaPage() {
         </div>
       </div>
 
-      {/* 3. Interactive Spine Map Widget */}
       <div className="border-t border-slate-200">
         <SpineMap />
       </div>

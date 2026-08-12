@@ -13,7 +13,7 @@ export default function TratamientosPage() {
 
   return (
     <section className="bg-slate-50 min-h-screen text-slate-800 font-sans">
-      {/* Page Banner Hero */}
+
       <div className="relative bg-[#8C4A6E] text-white pt-36 pb-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
@@ -35,7 +35,7 @@ export default function TratamientosPage() {
         </div>
       </div>
 
-      {/* Treatments Grid */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {treatmentsData.map((treatment) => (
@@ -82,7 +82,7 @@ export default function TratamientosPage() {
         </div>
       </div>
 
-      {/* Modal Detail Popup */}
+
       <AnimatePresence>
         {selectedTreatment && (
           <motion.div

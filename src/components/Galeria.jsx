@@ -47,20 +47,30 @@ export default function Galeria() {
   return (
     <section className="py-20 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
+
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary font-bold text-xs uppercase tracking-[0.2em]">Instalaciones y Equipos</span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-primary mt-2">
+          <span className="text-secondary font-bold text-xs uppercase tracking-[0.2em] block">Instalaciones y Equipos</span>
+          <motion.h2
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-3xl sm:text-4xl font-heading font-extrabold text-primary mt-2"
+          >
             Nuestra Clínica en Imágenes
-          </h2>
+          </motion.h2>
           <div className="w-12 h-1 bg-secondary mx-auto mt-4 rounded-full" />
-          <p className="text-dark/70 font-light mt-4 text-base sm:text-lg">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-dark/70 font-light mt-4 text-base sm:text-lg"
+          >
             Conoce nuestras instalaciones de primer nivel, equipos computarizados de descompresión y el equipo de profesionales dedicados a tu salud.
-          </p>
+          </motion.p>
         </div>
 
-        {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {images.map((img, i) => (
             <motion.div
@@ -69,20 +79,18 @@ export default function Galeria() {
               onClick={() => setSelectedImg(img)}
               className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group relative"
             >
-              {/* Photo */}
+
               <div className="h-64 w-full overflow-hidden relative">
-                <img 
-                  src={img.url} 
-                  alt={img.title} 
+                <img
+                  src={img.url}
+                  alt={img.title}
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500"
                 />
-                
-                {/* Category Badge overlay */}
+
                 <span className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-xl bg-primary text-white text-xs font-bold shadow-md">
                   {img.category}
                 </span>
 
-                {/* Hover overlay icons */}
                 <div className="absolute inset-0 bg-primary/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
                   <div className="w-12 h-12 rounded-full bg-white/20 border border-white/40 flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-transform duration-300">
                     <Eye className="h-6 w-6" />
@@ -90,7 +98,6 @@ export default function Galeria() {
                 </div>
               </div>
 
-              {/* Text Meta Info */}
               <div className="p-6 text-left">
                 <h4 className="font-heading font-extrabold text-primary text-base leading-snug group-hover:text-secondary transition-colors duration-300">
                   {img.title}
@@ -105,7 +112,6 @@ export default function Galeria() {
 
       </div>
 
-      {/* Lightbox Modal (Confined to absolute path overlay) */}
       <AnimatePresence>
         {selectedImg && (
           <motion.div
@@ -115,7 +121,7 @@ export default function Galeria() {
             onClick={() => setSelectedImg(null)}
             className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
           >
-            {/* Close button */}
+
             <button
               onClick={() => setSelectedImg(null)}
               className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center cursor-pointer border border-white/15"
@@ -124,7 +130,6 @@ export default function Galeria() {
               <X className="h-6 w-6" />
             </button>
 
-            {/* Modal Body */}
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
@@ -133,16 +138,15 @@ export default function Galeria() {
               onClick={(e) => e.stopPropagation()}
               className="relative bg-white rounded-3xl overflow-hidden max-w-4xl w-full shadow-2xl border border-white/10 flex flex-col md:flex-row"
             >
-              {/* Left Column (Image) */}
+
               <div className="md:w-3/5 bg-slate-950 flex items-center justify-center max-h-[500px] md:max-h-[600px] overflow-hidden">
-                <img 
-                  src={selectedImg.url} 
-                  alt={selectedImg.title} 
+                <img
+                  src={selectedImg.url}
+                  alt={selectedImg.title}
                   className="w-full h-full object-contain"
                 />
               </div>
 
-              {/* Right Column (Info) */}
               <div className="md:w-2/5 p-8 text-left flex flex-col justify-between">
                 <div className="space-y-4">
                   <span className="text-xs font-bold text-secondary uppercase tracking-widest block">

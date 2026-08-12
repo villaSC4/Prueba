@@ -13,24 +13,22 @@ export default function Nosotros() {
   return (
     <section id="nosotros" className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Grid */}
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                  {/* Left Column (Text content) */}
+
           <m.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 text-left space-y-6"
           >
-            
-            {/* Header decoration */}
+
             <div className="flex items-center gap-4">
-              <img 
-                src="https://spine.pe/wp-content/uploads/2023/05/icon-titulo.png" 
-                alt="Columna Vertebral" 
-                className="h-12 w-auto object-contain" 
+              <img
+                src="https://spine.pe/wp-content/uploads/2023/05/icon-titulo.png"
+                alt="Columna Vertebral"
+                className="h-12 w-auto object-contain"
               />
               <div>
                 <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-primary leading-tight">
@@ -44,7 +42,6 @@ export default function Nosotros() {
 
             <div className="w-12 h-1 bg-secondary rounded-full mt-3" />
 
-            {/* Paragraphs body */}
             <div className="space-y-4 text-slate-600 font-light text-sm sm:text-base leading-relaxed">
               <p>
                 <strong className="font-semibold text-primary">CLÍNICA SPINE</strong>, somos un centro especializado en columna vertebral donde la ciencia, la tecnología y la experiencia internacional se unen para transformar vidas.
@@ -63,7 +60,6 @@ export default function Nosotros() {
               </p>
             </div>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
                 href="#tratamientos"
@@ -81,33 +77,29 @@ export default function Nosotros() {
 
           </m.div>
 
-          {/* Right Column (Doctor Photo & Video Link) */}
           <m.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 flex justify-center items-center"
           >
-            
-            {/* Interactive Image Frame */}
-            <div 
+
+            <div
               onClick={() => setIsVideoOpen(true)}
               className="relative w-full max-w-[440px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 shadow-slate-300/40 group cursor-pointer card-hover-move"
             >
-              {/* Image */}
-              <img 
-                src="https://spine.pe/wp-content/uploads/2023/05/clinica-spine.jpg" 
-                alt="Especialista de Spine Clínica" 
-                className="w-full h-auto object-cover transform scale-100 group-hover:scale-105 transition-all duration-500" 
+
+              <img
+                src="https://spine.pe/wp-content/uploads/2023/05/clinica-spine.jpg"
+                alt="Especialista de Spine Clínica"
+                className="w-full h-auto object-cover transform scale-100 group-hover:scale-105 transition-all duration-500"
               />
 
-              {/* Dimmed Overlay */}
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-all duration-300" />
 
-              {/* Play Button Overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <m.div 
+                <m.div
                   whileHover={{ scale: 1.15 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl border-4 border-white/90 cursor-pointer"
@@ -116,7 +108,6 @@ export default function Nosotros() {
                 </m.div>
               </div>
 
-              {/* Caption Overlay */}
               <div className="absolute bottom-4 left-4 right-4 bg-primary/95 text-white py-2.5 px-4 rounded-xl text-xs font-bold text-center border border-white/10 uppercase tracking-wider">
                 Reproducir Video de Presentación
               </div>
@@ -128,7 +119,6 @@ export default function Nosotros() {
 
       </div>
 
-      {/* Video Modal Popup */}
       <Ap>
         {isVideoOpen && (
           <m.div
@@ -138,7 +128,7 @@ export default function Nosotros() {
             onClick={() => setIsVideoOpen(false)}
             className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4"
           >
-            {/* Close button */}
+
             <button
               onClick={() => setIsVideoOpen(false)}
               className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center cursor-pointer border border-white/10"
@@ -147,7 +137,6 @@ export default function Nosotros() {
               <X className="h-6 w-6" />
             </button>
 
-            {/* Video container */}
             <m.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}

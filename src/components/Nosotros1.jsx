@@ -7,7 +7,6 @@ export default function Nosotros() {
     return (
         <section id="nosotros" className="w-full bg-white text-slate-800 font-sans overflow-hidden">
 
-            {/* 1. HERO BANNER PRINCIPAL (Animado y adaptado) */}
             <div className="relative bg-[#8C4A6E] text-white pt-36 md:pt-44 pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
                 <div className="absolute inset-0 opacity-20 transition-transform duration-1000 hover:scale-105">
                     <img
@@ -30,7 +29,6 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            {/* 2. SOMOS SPINE CLÍNICA (Con tarjeta de imagen interactiva) */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -76,7 +74,6 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            {/* 3. COLUMNA VERTEBRAL SANA + 4 PILARES DINÁMICOS */}
             <div className="bg-[#8C4A6E] text-white py-14 px-4 sm:px-6 lg:px-8 border-t border-b border-white/10">
                 <div className="max-w-4xl mx-auto text-center space-y-4 mb-12">
                     <p className="text-lg md:text-xl font-light leading-relaxed">
@@ -87,7 +84,6 @@ export default function Nosotros() {
                     </p>
                 </div>
 
-                {/* Pilares interactivos con Hover en Iconos */}
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center pt-6 border-t border-white/20">
 
                     <div className="flex flex-col items-center space-y-3 p-4 rounded-xl hover:bg-white/10 transition-all duration-300 cursor-pointer group">
@@ -129,7 +125,6 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            {/* 4. BANNER CALL TO ACTION (Botones con efecto de escala) */}
             <div className="relative bg-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
                 <div className="absolute inset-0">
                     <img
@@ -165,7 +160,6 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            {/* 5. LOS 3 PILARES: CIENCIA, ARTE Y FILOSOFÍA (Tarjetas elevadas al Hover) */}
             <div className="bg-white py-16 md:py-20 border-t border-slate-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -180,7 +174,6 @@ export default function Nosotros() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                        {/* Tarjeta 1 */}
                         <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-[#8C4A6E] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group card-hover-move">
                             <h3 className="text-xl font-bold text-[#8C4A6E] group-hover:text-amber-600 transition-colors">
                                 CIENCIA
@@ -190,7 +183,6 @@ export default function Nosotros() {
                             </p>
                         </div>
 
-                        {/* Tarjeta 2 */}
                         <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-amber-400 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group card-hover-move">
                             <h3 className="text-xl font-bold text-[#8C4A6E] group-hover:text-amber-600 transition-colors">
                                 ARTE
@@ -200,7 +192,6 @@ export default function Nosotros() {
                             </p>
                         </div>
 
-                        {/* Tarjeta 3 */}
                         <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-[#8C4A6E] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group card-hover-move">
                             <h3 className="text-xl font-bold text-[#8C4A6E] group-hover:text-amber-600 transition-colors">
                                 FILOSOFÍA
@@ -214,7 +205,6 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            {/* 6. MISIÓN Y VISIÓN (Tarjetas Interactivas) */}
             <div className="bg-slate-50 py-16 md:py-20 border-t border-slate-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -237,7 +227,6 @@ export default function Nosotros() {
                 </div>
             </div>
 
-            {/* 7. SISTEMA NERVIOSO INTERACTIVO */}
             <SpineMap />
 
         </section>

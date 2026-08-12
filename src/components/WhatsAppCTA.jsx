@@ -5,7 +5,7 @@ export default function WhatsAppCTA() {
   const [showTooltip, setShowTooltip] = useState(false)
 
   useEffect(() => {
-    // Mostrar el mensaje flotante de WhatsApp tras 4 segundos
+
     const timer = setTimeout(() => {
       setShowTooltip(true)
     }, 400)
@@ -19,8 +19,8 @@ export default function WhatsAppCTA() {
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end animate-float">
-      
-      {/* Welcome Tooltip */}
+
+
       {showTooltip && (
         <div className="mb-3 bg-white text-primary border border-slate-200/80 rounded-2xl p-4 shadow-xl max-w-xs text-left text-xs animate-fade-in relative flex items-start gap-2 shadow-slate-300/40">
           <button
@@ -35,7 +35,7 @@ export default function WhatsAppCTA() {
             <p className="text-slate-500 font-light mt-1 leading-normal">
               Escríbenos ahora y programa tu cita de evaluación médica.
             </p>
-            <button 
+            <button
               onClick={handleWhatsAppClick}
               className="text-secondary font-bold hover:underline mt-1.5 inline-block text-[11px] cursor-pointer"
             >
@@ -45,18 +45,18 @@ export default function WhatsAppCTA() {
         </div>
       )}
 
-      {/* Floating Button */}
+
       <button
         onClick={handleWhatsAppClick}
         className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 group relative cursor-pointer"
         aria-label="Agendar por WhatsApp"
       >
-        {/* Pulsing indicator ring */}
+
         <span className="absolute inset-0 rounded-full border-4 border-[#25D366]/40 animate-ping group-hover:animate-none opacity-75" />
-        
-        {/* WhatsApp Icon */}
-        <svg 
-          viewBox="0 0 24 24" 
+
+
+        <svg
+          viewBox="0 0 24 24"
           className="w-7 h-7 fill-white"
           xmlns="http://www.w3.org/2000/svg"
         >
