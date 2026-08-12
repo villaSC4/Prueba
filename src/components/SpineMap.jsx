@@ -382,7 +382,13 @@ export default function SpineMap() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Title Area */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-4 mb-16"
+        >
           <div className="flex justify-center">
             <img 
               src="https://spine.pe/wp-content/uploads/2023/05/icon-titulo.png" 
@@ -397,13 +403,19 @@ export default function SpineMap() {
             Como los problemas en la columna pueden afectar tu cuerpo
           </p>
           <div className="w-16 h-1 bg-secondary mx-auto rounded-full mt-2" />
-        </div>
+        </motion.div>
 
         {/* Anatomy layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* COLUMN 1: Silhouette and Spine Visual (Visible on Desktop only) */}
-          <div className="hidden lg:flex lg:col-span-4 bg-white rounded-2xl shadow-md p-6 justify-center items-center relative min-h-[570px] border border-slate-200/50">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="hidden lg:flex lg:col-span-4 bg-white rounded-2xl shadow-md p-6 justify-center items-center relative min-h-[570px] border border-slate-200/50 card-hover-move"
+          >
             <div className="relative w-[180px] h-[520px] select-none">
               
               {/* Silhouette */}
@@ -459,13 +471,19 @@ export default function SpineMap() {
               )}
 
             </div>
-          </div>
+          </motion.div>
 
           {/* COLUMN 2: Vertebrae Buttons Selection list */}
-          <div className="col-span-1 lg:col-span-4 bg-white rounded-2xl shadow-md p-6 border border-slate-200/50">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="col-span-1 lg:col-span-4 bg-white rounded-2xl shadow-md p-6 border border-slate-200/50 card-hover-move"
+          >
             <h3 className="text-lg font-heading font-bold text-primary mb-5 flex items-center gap-2">
               <Activity className="h-5 w-5 text-secondary" />
-              Selecciona una vértebra:
+              Selecciona una vertebra:
             </h3>
 
             <div className="space-y-6">
@@ -544,7 +562,7 @@ export default function SpineMap() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* COLUMN 3: Vertebra Symptoms / Organs Details Panel */}
           <div className="col-span-1 lg:col-span-4 min-h-[460px]">
@@ -555,7 +573,7 @@ export default function SpineMap() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 flex flex-col h-full space-y-6"
+                className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 flex flex-col h-full space-y-6 card-hover-move"
               >
                 {/* Badge and Region Title */}
                 <div className="flex items-center gap-4">
@@ -621,7 +639,7 @@ export default function SpineMap() {
                 {/* Section Action CTA */}
                 <button
                   onClick={() => handleWhatsAppQuery(selectedVert)}
-                  className="w-full bg-primary hover:bg-[#733E5E] text-white py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 shadow-md shadow-primary/10 text-sm"
+                  className="w-full bg-primary hover:bg-[#733E5E] text-white py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 shadow-md shadow-primary/10 text-sm hover:scale-105 active:scale-95"
                 >
                   <PhoneCall className="h-4 w-4" />
                   Consultar sobre esta zona

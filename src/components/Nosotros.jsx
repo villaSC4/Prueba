@@ -16,9 +16,14 @@ export default function Nosotros() {
         
         {/* Section Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column (Text content) */}
-          <div className="lg:col-span-7 text-left space-y-6">
+                  {/* Left Column (Text content) */}
+          <m.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 text-left space-y-6"
+          >
             
             {/* Header decoration */}
             <div className="flex items-center gap-4">
@@ -62,27 +67,33 @@ export default function Nosotros() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
                 href="#tratamientos"
-                className="inline-flex items-center justify-center bg-primary hover:bg-[#733E5E] text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-primary/10 transition-all duration-300 text-sm"
+                className="inline-flex items-center justify-center bg-primary hover:bg-[#733E5E] text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-primary/10 transition-all duration-300 text-sm hover:scale-105 active:scale-95"
               >
                 Nuestros Tratamientos
               </a>
               <button
                 onClick={handleWhatsAppBooking}
-                className="inline-flex items-center justify-center border-2 border-slate-700 text-slate-700 hover:bg-slate-50 font-bold px-8 py-4 rounded-xl transition-all duration-300 text-sm cursor-pointer"
+                className="inline-flex items-center justify-center border-2 border-slate-700 text-slate-700 hover:bg-slate-50 font-bold px-8 py-4 rounded-xl transition-all duration-300 text-sm cursor-pointer hover:scale-105 active:scale-95"
               >
                 Consúltanos por WhatsApp
               </button>
             </div>
 
-          </div>
+          </m.div>
 
           {/* Right Column (Doctor Photo & Video Link) */}
-          <div className="lg:col-span-5 flex justify-center items-center">
+          <m.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex justify-center items-center"
+          >
             
             {/* Interactive Image Frame */}
             <div 
               onClick={() => setIsVideoOpen(true)}
-              className="relative w-full max-w-[440px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 shadow-slate-300/40 group cursor-pointer"
+              className="relative w-full max-w-[440px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 shadow-slate-300/40 group cursor-pointer card-hover-move"
             >
               {/* Image */}
               <img 
@@ -111,7 +122,7 @@ export default function Nosotros() {
               </div>
             </div>
 
-          </div>
+          </m.div>
 
         </div>
 

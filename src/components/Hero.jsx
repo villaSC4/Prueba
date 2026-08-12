@@ -92,27 +92,27 @@ export default function Hero() {
           </div>
 
           {/* Subtitle / Tagline */}
-          <p className="text-base sm:text-lg text-secondary font-bold font-heading max-w-2xl uppercase tracking-wider">
+          <p className="text-base sm:text-lg text-secondary font-bold font-heading max-w-2xl uppercase tracking-wider animate-slide-in-left">
             Especialistas en la prevención y corrección de problemas de la columna vertebral
           </p>
 
           {/* Description */}
-          <p className="text-sm sm:text-base text-slate-200 font-light max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-200 font-light max-w-xl leading-relaxed animate-slide-in-right">
             Somos un centro especializado en columna vertebral donde la ciencia, la tecnología y la experiencia internacional se unen para transformar vidas.
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto animate-fade-in-up">
             <button
               onClick={handleWhatsAppBooking}
-              className="bg-primary hover:bg-[#733E5E] text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-primary/20 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer active:scale-95 text-base w-full sm:w-auto"
+              className="bg-primary hover:bg-[#733E5E] text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-primary/20 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer active:scale-95 text-base w-full sm:w-auto hover:scale-105"
             >
               <Calendar className="h-5 w-5" />
               Agenda tu cita
             </button>
             <a
               href="#nosotros"
-              className="px-8 py-4 rounded-lg border-2 border-white text-white hover:bg-white hover:text-primary font-bold transition-all duration-300 text-base flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="px-8 py-4 rounded-lg border-2 border-white text-white hover:bg-white hover:text-primary font-bold transition-all duration-300 text-base flex items-center justify-center gap-2 w-full sm:w-auto hover:scale-105 active:scale-95"
             >
               <Info className="h-5 w-5" />
               Quiénes somos
@@ -123,12 +123,34 @@ export default function Hero() {
 
       {/* 2. FLOATING ADVANTAGES GRID (OVERLAPPING THE BOTTOM) */}
       <section className="relative z-25 -mt-16 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <motion.div 
+          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.08
+              }
+            }
+          }}
+        >
           {advantages.map((adv, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -5, backgroundColor: '#BF932E' }}
-              className="bg-primary text-white p-5 rounded-lg shadow-xl hover:shadow-2xl flex flex-col items-center justify-center text-center gap-4 min-h-[160px] border border-white/5 transition-all duration-300 group cursor-default"
+              variants={{
+                hidden: { opacity: 0, scale: 0.6, y: 80 },
+                visible: { 
+                  opacity: 1, 
+                  scale: 1, 
+                  y: 0,
+                  transition: { type: "spring", stiffness: 150, damping: 11 } 
+                }
+              }}
+              whileHover={{ y: -8, backgroundColor: '#BF932E' }}
+              className="bg-primary text-white p-5 rounded-lg shadow-xl hover:shadow-2xl flex flex-col items-center justify-center text-center gap-4 min-h-[160px] border border-white/5 transition-all duration-300 group cursor-default card-hover-move"
             >
               <div className="w-14 h-14 flex items-center justify-center">
                 <img 
@@ -142,7 +164,7 @@ export default function Hero() {
               </h3>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </div>
   )

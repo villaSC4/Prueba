@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MapPin, Mail, Clock, Phone, Send, CheckCircle2, ChevronDown } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
@@ -33,22 +34,34 @@ export default function Contacto() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary font-bold text-xs uppercase tracking-[0.2em]">Agendamiento</span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-primary mt-2">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <span className="text-secondary font-bold text-xs uppercase tracking-[0.2em] hover:text-primary transition-colors duration-300 cursor-default">Agendamiento</span>
+          <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-primary mt-2 hover:scale-[1.01] transition-transform duration-300 cursor-default">
             Contacto y Citas de Evaluación
           </h2>
           <div className="w-12 h-1 bg-secondary mx-auto mt-4 rounded-full" />
           <p className="text-dark/70 font-light mt-4 text-base sm:text-lg">
             Estamos listos para ayudarte a recuperar el bienestar de tu columna. Contáctanos por formulario, visítanos o agenda directamente por WhatsApp.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           
           {/* Info Column (Left) */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-100/40 space-y-6 text-left">
+          <motion.div 
+            initial={{ opacity: 0, x: -45 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-5 flex flex-col justify-between space-y-8"
+          >
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-100/40 space-y-6 text-left card-hover-move">
               <h3 className="text-xl font-heading font-extrabold text-primary mb-4">Información de Contacto</h3>
               
               {/* Dirección */}
@@ -120,10 +133,16 @@ export default function Contacto() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Form Column (Right) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-xl shadow-slate-100/40 relative flex flex-col justify-center min-h-[500px]">
+          <motion.div 
+            initial={{ opacity: 0, x: 45 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-xl shadow-slate-100/40 relative flex flex-col justify-center min-h-[500px] card-hover-move"
+          >
             {isSubmitted ? (
               <div className="text-center space-y-6 py-10 animate-fade-in">
                 <div className="w-20 h-20 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto shadow-inner shadow-accent/5">
@@ -255,7 +274,7 @@ export default function Contacto() {
                 </button>
               </form>
             )}
-          </div>
+          </motion.div>
 
         </div>
 

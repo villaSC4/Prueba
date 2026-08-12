@@ -1,6 +1,24 @@
 import { Star, MessageSquareQuote, CheckCircle2 } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Testimonios() {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 90, damping: 14 },
+    },
+  }
   const reviews = [
     {
       name: 'Carlos Mendoza',
@@ -77,10 +95,17 @@ export default function Testimonios() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           {reviews.map((rev, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={cardVariants}
               className="bg-slate-50 border border-slate-100 rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between card-hover-move"
             >
               <div className="absolute top-6 right-8 text-slate-200/80">
@@ -120,9 +145,9 @@ export default function Testimonios() {
                   {rev.date}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA to Google Reviews */}
         <div className="text-center mt-12">
