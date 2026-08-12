@@ -18,7 +18,7 @@ export default function WhatsAppCTA() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end animate-float">
       
       {/* Welcome Tooltip */}
       {showTooltip && (

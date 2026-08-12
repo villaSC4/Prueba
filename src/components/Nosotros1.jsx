@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion as m, AnimatePresence as Ap } from 'framer-motion'
 import { Play, Calendar, HelpCircle, X } from 'lucide-react'
+import SpineMap from './SpineMap'
 
 export default function Nosotros() {
     return (
@@ -180,7 +181,7 @@ export default function Nosotros() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                         {/* Tarjeta 1 */}
-                        <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-[#8C4A6E] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+                        <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-[#8C4A6E] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group card-hover-move">
                             <h3 className="text-xl font-bold text-[#8C4A6E] group-hover:text-amber-600 transition-colors">
                                 CIENCIA
                             </h3>
@@ -190,7 +191,7 @@ export default function Nosotros() {
                         </div>
 
                         {/* Tarjeta 2 */}
-                        <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-amber-400 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+                        <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-amber-400 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group card-hover-move">
                             <h3 className="text-xl font-bold text-[#8C4A6E] group-hover:text-amber-600 transition-colors">
                                 ARTE
                             </h3>
@@ -200,7 +201,7 @@ export default function Nosotros() {
                         </div>
 
                         {/* Tarjeta 3 */}
-                        <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-[#8C4A6E] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+                        <div className="bg-slate-50 p-8 rounded-2xl border-t-4 border-[#8C4A6E] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group card-hover-move">
                             <h3 className="text-xl font-bold text-[#8C4A6E] group-hover:text-amber-600 transition-colors">
                                 FILOSOFÍA
                             </h3>
@@ -218,14 +219,14 @@ export default function Nosotros() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                        <div className="bg-white p-8 rounded-2xl border-l-4 border-[#8C4A6E] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-3">
+                        <div className="bg-white p-8 rounded-2xl border-l-4 border-[#8C4A6E] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-3 card-hover-move">
                             <h3 className="text-xl font-bold text-[#8C4A6E] uppercase">Nuestra Misión</h3>
                             <p className="text-slate-600 text-sm md:text-base leading-relaxed font-light">
                                 Nuestra misión es educar e inspirar a tantas personas como sea posible sobre el extraordinario potencial que tiene el cuerpo. La quiropráctica nos ayuda a expresar este potencial, haciendo a las personas responsables de su propia salud.
                             </p>
                         </div>
 
-                        <div className="bg-white p-8 rounded-2xl border-l-4 border-amber-400 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-3">
+                        <div className="bg-white p-8 rounded-2xl border-l-4 border-amber-400 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-3 card-hover-move">
                             <h3 className="text-xl font-bold text-[#8C4A6E] uppercase">Nuestra Visión</h3>
                             <p className="text-slate-600 text-sm md:text-base leading-relaxed font-light">
                                 Creemos firmemente que cuando el Sistema Nervioso funciona sin interferencias podemos lograr una salud óptima, sin necesidad de agentes externos agresivos ni medicamentos de por vida.
@@ -235,6 +236,9 @@ export default function Nosotros() {
                     </div>
                 </div>
             </div>
+
+            {/* 7. SISTEMA NERVIOSO INTERACTIVO */}
+            <SpineMap />
 
         </section>
     )

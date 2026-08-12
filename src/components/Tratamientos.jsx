@@ -101,7 +101,7 @@ export default function Tratamientos() {
               key={i}
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="glass-panel rounded-3xl border border-slate-100 hover:border-secondary/20 shadow-xl shadow-slate-100/40 hover:shadow-2xl hover:shadow-secondary/5 flex flex-col justify-between overflow-hidden transition-all duration-300 group"
+              className="glass-panel rounded-3xl border border-slate-100 hover:border-secondary/20 shadow-xl shadow-slate-100/40 hover:shadow-2xl hover:shadow-secondary/5 flex flex-col justify-between overflow-hidden transition-all duration-300 group card-hover-move"
             >
               <div>
                 {/* Treatment Image header */}

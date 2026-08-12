@@ -70,7 +70,7 @@ export default function Diferenciadores() {
               key={index}
               variants={cardVariants}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-100/50 hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-100/50 hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-300 flex flex-col justify-between group card-hover-move"
             >
               <div>
                 {/* Icon wrapper with custom gradient */}

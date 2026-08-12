@@ -81,7 +81,7 @@ export default function Testimonios() {
           {reviews.map((rev, i) => (
             <div
               key={i}
-              className="bg-slate-50 border border-slate-100 rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between"
+              className="bg-slate-50 border border-slate-100 rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between card-hover-move"
             >
               <div className="absolute top-6 right-8 text-slate-200/80">
                 <MessageSquareQuote className="h-10 w-10 stroke-[1.5]" />

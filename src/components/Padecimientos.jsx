@@ -91,7 +91,7 @@ export default function Padecimientos() {
               <button
                 key={pad.id}
                 onClick={() => setActiveTab(pad.id)}
-                className={`py-4 px-6 rounded-2xl text-left transition-all duration-300 border flex items-center justify-between shrink-0 lg:shrink w-[240px] lg:w-full cursor-pointer ${
+                className={`py-4 px-6 rounded-2xl text-left transition-all duration-300 border flex items-center justify-between shrink-0 lg:shrink w-[240px] lg:w-full cursor-pointer hover:scale-[1.02] hover:-translate-y-0.5 shadow-sm hover:shadow-md ${
                   activeTab === pad.id
                     ? 'bg-primary border-primary text-white shadow-xl shadow-primary/10'
                     : 'bg-white border-slate-100 hover:border-slate-300 text-primary'
